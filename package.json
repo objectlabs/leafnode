@@ -1,0 +1,21 @@
+{
+    "name": "leafnode",
+    "version": "0.1.0",
+    "description": "Sync driver for MongoDB",
+    "keywords": ["leafnode", "leaf-node", "node", "mongodb"],
+    "contributors": [
+        "Will Shulman <will@objectlabs.com>"
+    ],
+    "repository" : { "type" :  "git",
+                     "url" :   "http://github.com/objectlabs/leafnode.git" },
+    "main": "./lib/leafnode.js",
+    "directories" : {
+        "lib" : "./lib"
+    },
+    "engines": { "node": ">= 0.5.2" },
+    "dependencies" : {
+        "fibers" : ">= 0.6.1",
+        "mongodb" : ">= 0.9.9-8",
+    },
+    "preferGlobal": false
+}
