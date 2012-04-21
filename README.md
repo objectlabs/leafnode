@@ -1,11 +1,13 @@
-leaf-node
+leafnode
 ---------
 
-```leaf-node``` is a "synchronous" MongoDB driver. It is a wrapper around [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) implemented using the [node-fibers](https://github.com/laverdet/node-fibers) co-routine library. 
+```leafnode``` is a "synchronous" MongoDB driver. It is a wrapper around [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) implemented using the [node-fibers](https://github.com/laverdet/node-fibers) co-routine library. 
 
 Example:
 
 ```
+var connect = require('leafnode').connect;
+
 try {
    var db = connect("mongodb://localhost:27017/mydb");
    var c = db.getCollection("users");
@@ -18,7 +20,7 @@ try {
 
 No callbacks needed. If an error occurs an exception is thrown.
 
-We say "synchronous" because ```leaf-node``` code execution is still asynchronous under the hood, but uses Fibers to provide a synchronous programming interface. One should therefore note that many functions and methods of this driver actually yield control to the event loop during execution. For more on Fibers see the documenentation [here](https://github.com/laverdet/node-fibers).
+We say "synchronous" because ```leafnode``` code execution is still asynchronous under the hood, but uses Fibers to provide a synchronous programming interface. One should therefore note that many functions and methods of this driver actually yield control to the event loop during execution. For more on Fibers see the documenentation [here](https://github.com/laverdet/node-fibers).
 
 Installation
 ------------
@@ -27,15 +29,15 @@ Using npm
 
 ```
 % cd <your-app>
-% npm install leaf-node
+% npm install leafnode
 ```
 
 From git
 
 ```
-% git clone git@github.com:objectlabs/leaf-node.git
+% git clone git@github.com:objectlabs/leafnode.git
 % cd <your-app>
-% npm install <path-to-leaf-node>
+% npm install <path-to-leafnode>
 ```
 
 To run unit tests
@@ -46,10 +48,10 @@ To run unit tests
 ```
 
 
-Using ```leaf-node``` in your code
+Using ```leafnode``` in your code
 ----------------------------------
 
-In order to use ```leaf-node``` you need to properly bootstrap your application by creating a ```Fiber``` for the code to run in. 
+In order to use ```leafnode``` you need to properly bootstrap your application by creating a ```Fiber``` for the code to run in. 
 
 The basic idea is as follows:
 
