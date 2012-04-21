@@ -3,6 +3,8 @@ leafnode
 
 ```leafnode``` is a "synchronous" MongoDB driver. It is a wrapper around [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) implemented using the [node-fibers](https://github.com/laverdet/node-fibers) co-routine library. 
 
+```leafnode``` is currently experimental and in alpha.
+
 Example:
 
 ```
