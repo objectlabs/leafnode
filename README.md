@@ -79,6 +79,5 @@ app.use(function(req, res, next) {
 Open issues
 -----------
 
-* Does not yet support replica-set connections
 * Support for options in MongoDB URI uneven
 
