@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-require('fibers');
+var Fiber = require('fibers');
 
 /****************************************************************************************************
  * run
