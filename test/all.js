@@ -22,7 +22,6 @@ var Fiber = require('fibers');
  */
 function run() {
     Fiber(function() {
-        require('./uri').run();
         require('./find').run();
         require('./insert').run();
         require('./update').run();
