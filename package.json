@@ -5,7 +5,8 @@
     "keywords": ["leaf-node", "leafnode", "mongodb", "node", "driver"],
     "contributors": [
         "Will Shulman <will@objectlabs.com>",
-        "Jared D. Cottrell <jared@objectlabs.com>"
+        "Jared D. Cottrell <jared@objectlabs.com>",
+        "Jackson Callaway <jackson@objectlabs.com>"
     ],
     "repository" : { "type" :  "git",
                      "url" :   "http://github.com/objectlabs/leafnode.git" },
