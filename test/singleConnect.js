@@ -25,7 +25,15 @@ var uri = args[0];
 Fiber(function() {
     var uriObj = mongodbUri.parse(uri);
     var singleNodeConnection = uriObj.hosts.length==1;
-    var db = connect(uri, {}, singleNodeConnection);
+    var options = {
+        "db":{
+
+        },
+        "server": {
+            "auto_reconnect": true
+        }
+    };
+    var db = connect(uri, options, singleNodeConnection);
     console.log(db.command({"isMaster":1}));
 }).run();
 
