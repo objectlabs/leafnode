@@ -17,6 +17,7 @@
 
 var connect = require('../lib/leafnode').connect;
 var assert = require('assert');
+var numDocs = 100
 
 /****************************************************************************************************
  * run
@@ -45,18 +46,18 @@ function run() {
  * testCursor
  */
 function testCursor(c) {
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < numDocs; i++) {
         var obj = makeObj(i);
         c.insert(obj);
     }
 
     var j = 0;
-    var cursor = c.find();
+    var cursor = c.find({});
     var obj;
     while (obj = cursor.next()) {
         j++;
     }
-    assert.equal(j, 100);
+    assert.equal(j, numDocs);
 }
 
 /****************************************************************************************************
@@ -64,13 +65,13 @@ function testCursor(c) {
  */
 function testArray(c) {
     c.drop();
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < numDocs; i++) {
         var obj = makeObj(i);
         c.insert(obj);
     }
     
     var all = c.find().toArray();
-    assert.equal(all.length, 100);
+    assert.equal(all.length, numDocs);
     
     var o = makeObj(0);
     for (var i in all) {
@@ -84,7 +85,6 @@ function testArray(c) {
         assert.deepEqual(o.aField, a.aField);
         assert.deepEqual(o.oField, a.oField);
     }
-
 };
 
 /****************************************************************************************************
