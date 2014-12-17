@@ -50,9 +50,9 @@ function testUpdate(c) {
     c.insert([obj1, obj2, obj3]);
 
     c.update({ _id : obj1._id }, { "$set" : { "a" : 0 }});
+
     var lookup = c.find({ "a" : 0 }).toArray();
     assert.equal(lookup.length, 1);    
-
 };
 
 /****************************************************************************************************
