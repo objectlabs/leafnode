@@ -81,3 +81,10 @@ Open issues
 
 * Support for options in MongoDB URI uneven
 
+v3.0.0 Changelog
+----------------
+
+* Fixes to the `sync` function. It used to be that if an object came in through the error parameter in the callback but was not an instanceof Error, then that object would be return by `sync` as the result. Now any object passed to callback as the error parameter will result in a thrown Error object.
+* New sort and limit functions have been added to the Cursor class
+* Implemented db switching within a single connection. This is a call to the driver's `DB.db(dbName)` function 
+
