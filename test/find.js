@@ -33,6 +33,7 @@ function run() {
     try {
         testCursor(c);
         testArray(c);
+	testFindOne(c)
     } catch (e) {
         throw e;
     } finally {
@@ -86,6 +87,17 @@ function testArray(c) {
         assert.deepEqual(o.oField, a.oField);
     }
 };
+
+/****************************************************************************************************
+ * testFindOne
+ */
+function testFindOne(c) {
+    c.drop();
+    var obj = {_id: 0};
+    c.insert(obj);
+    var result = c.findOne({_id: 0});
+    assert.deepEqual(obj, result);
+}
 
 /****************************************************************************************************
  * makeObj

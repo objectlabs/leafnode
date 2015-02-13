@@ -15,18 +15,18 @@
  *  limitations under the License.
  */
 
-var Fiber = require('fibers');
+var spawn = require('fibers-utils').spawn;
 
 /****************************************************************************************************
  * run
  */
 function run() {
-    Fiber(function() {
+    spawn(function() {
         require('./find').run();
         require('./insert').run();
         require('./update').run();
         require('./distinct').run();
-    }).run();
+    });
 };
 
 /****************************************************************************************************
