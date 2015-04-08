@@ -1,27 +1,27 @@
 {
-    "name": "leafnode",
-    "version": "2.1.2",
-    "description": "Sync driver for MongoDB",
-    "keywords": ["leaf-node", "leafnode", "mongodb", "node", "driver"],
-    "contributors": [
-        "Will Shulman <will@objectlabs.com>",
-        "Jared D. Cottrell <jared@objectlabs.com>",
-        "Jackson Callaway <jackson@objectlabs.com>"
-    ],
-    "repository" : { "type" :  "git",
-                     "url" :   "http://github.com/objectlabs/leafnode.git" },
-    "main": "./lib/leafnode.js",
-    "directories" : {
-        "lib" : "./lib"
-    },
-    "engines": { "node": ">= 0.5.2" },
-    "dependencies" : {
-        "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git",
-        "mongodb" : ">=1.2.0 <2.0.0",
-        "mongodb-uri": ">= 0.9.6"
-    },
-    "scripts": {
-        "test": "node test/all.js"
-    },
-    "preferGlobal": false
+  "name": "leafnode",
+  "version": "2.1.3",
+  "description": "Sync driver for MongoDB",
+  "keywords": ["leaf-node", "leafnode", "mongodb", "node", "driver"],
+  "contributors": [
+    "Will Shulman <will@objectlabs.com>",
+    "Jared D. Cottrell <jared@objectlabs.com>",
+    "Jackson Callaway <jackson@objectlabs.com>"
+  ],
+  "repository" : { "type" :  "git",
+                   "url" :   "http://github.com/objectlabs/leafnode.git" },
+  "main": "./lib/leafnode.js",
+  "directories" : {
+    "lib" : "./lib"
+  },
+  "engines": { "node": ">= 0.5.2" },
+  "dependencies" : {
+    "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git#v1.0.2"
+    "mongodb" : ">=1.2.0 <2.0.0",
+    "mongodb-uri": ">= 0.9.6"
+  },
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "preferGlobal": false
 }
