@@ -1,6 +1,6 @@
 {
   "name": "leafnode",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Sync driver for MongoDB",
   "keywords": ["leaf-node", "leafnode", "mongodb", "node", "driver"],
   "contributors": [
