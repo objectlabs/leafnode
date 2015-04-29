@@ -71,7 +71,7 @@ function testInsert(c) {
 function testBulkInsert(c) {
     var o = {};
     c.insert([o]);
-    
+
     assert.ok(o._id);
 };
 
