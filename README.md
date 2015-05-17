@@ -76,6 +76,13 @@ app.use(function(req, res, next) {
 });
 ```
 
+Note: v2.2.x branch
+-------------------
+This is the `v2.2.x` branch of `leafnode`, whose charter is:
+
+   1.  be compatible with MongoDB 3.0
+   1.  stay off of `node-mongodb-native` driver 2.0
+
 Open issues
 -----------
 
