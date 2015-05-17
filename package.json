@@ -16,7 +16,7 @@
   },
   "engines": { "node": ">= 0.5.2" },
   "dependencies" : {
-    "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git#v1.0.2",
+    "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git#v1.0.4",
     "mongodb" : ">=1.4.38 <2.0.0",
     "mongodb-uri": ">= 0.9.6"
   },
