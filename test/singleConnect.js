@@ -16,13 +16,13 @@
  */
 
 var connect = require("./../lib/leafnode.js").connect;
-var Fiber = require('fibers');
+var spawn = require('fibers-utils').spawn;
 var mongodbUri = require("mongodb-uri");
 
 var args = process.argv.slice(2);
 var uri = args[0];
 
-Fiber(function() {
+spawn(function() {
     var uriObj = mongodbUri.parse(uri);
     var singleNodeConnection = uriObj.hosts.length==1;
     var options = {
@@ -35,5 +35,5 @@ Fiber(function() {
     };
     var db = connect(uri, options, singleNodeConnection);
     console.log(db.command({"isMaster":1}));
-}).run();
+});
 
