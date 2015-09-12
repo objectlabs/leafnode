@@ -17,7 +17,7 @@
   "engines": { "node": ">= 0.5.2" },
   "dependencies" : {
     "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git#v1.0.2",
-    "mongodb" : ">=1.2.0 <2.0.0",
+    "mongodb" : "1.4.38",
     "mongodb-uri": ">= 0.9.6"
   },
   "scripts": {
