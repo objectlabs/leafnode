@@ -1,28 +1,34 @@
-var ReplSet = require('mongodb').ReplSetServers;
-var Server = require('mongodb').Server;
-var Db = require('mongodb').Db;
+/****************************************************************************************************
+ *
+ *  Copyright (C) 2012 ObjectLabs Corporation
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
 
-var set = new ReplSet([new Server("shadrach.mongolab.com", 45767)]);
+var connect = require('../lib/leafnode').connect;
+var spawn = require('fibers-utils').spawn;
 
-var db = new Db('will', set);
+/****************************************************************************************************
+ * run
+ */
+function run() {
+    spawn(function() {
+        console.log("Testing getCollectionNames()");
 
-db.open(function(err, db) {
-    console.log("22");
-    db.authenticate("will", "will", function(err, res) {
-        console.log(err);
-        console.log(res);
-        //    console.log(db.authenticate("will", "will"));
-        console.log(db.collection("foo", {}, function(err, c) {
-            c.insert({});
-            c.find({}).toArray(function(err, ds) {
-                console.log(err);
-                if (ds) {
-                    ds.forEach(function(e, r) {
-                        console.log(e);
-                    });
-                }
-            });
-        }));
+        var db = connect("mongodb://localhost:27017");
+        var names = db.getCollectionNames();
+        console.log(names);
     });
-});
+}
 
+run();
