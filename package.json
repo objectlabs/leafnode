@@ -1,6 +1,6 @@
 {
   "name": "leafnode",
-  "version": "3.1.0",
+  "version": "2.3.0",
   "description": "Sync driver for MongoDB",
   "keywords": ["leaf-node", "leafnode", "mongodb", "node", "driver"],
   "contributors": [
@@ -17,7 +17,7 @@
   "engines": { "node": ">= 0.5.2" },
   "dependencies" : {
     "fibers-utils": "git+ssh://git@github.com:objectlabs/fibers-utils.git#v1.0.3",
-    "mongodb" : ">= 2.1.0",
+    "mongodb" : ">= 2.0.49",
     "mongodb-uri": ">= 0.9.6"
   },
   "scripts": {
