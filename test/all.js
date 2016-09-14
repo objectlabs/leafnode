@@ -15,23 +15,23 @@
  *  limitations under the License.
  */
 
-var spawn = require('fibers-utils').spawn;
+var __ = require('@carbon-io/fibers').__(module)
 
 /****************************************************************************************************
  * run
  */
 function run() {
-    spawn(function() {
-        require('./find').run();
-        require('./insert').run();
-        require('./update').run();
-        require('./distinct').run();
-    });
+  __(function() {
+    require('./find').run()
+    require('./insert').run()
+    require('./update').run()
+    require('./distinct').run()
+  });
 };
 
 /****************************************************************************************************
  * main
  */
 if (require.main == module) {
-    run();
+  run()
 }
